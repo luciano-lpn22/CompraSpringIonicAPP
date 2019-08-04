@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, IonicPage } from 'ionic-angular';
+import { NavController, IonicPage, MenuController } from 'ionic-angular';
 
 
 @IonicPage()
@@ -9,12 +9,20 @@ import { NavController, IonicPage } from 'ionic-angular';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController,public menu:MenuController) {
 
   }
 
   public login(){
-    this.navCtrl.push('CategoriasPage');
+    this.navCtrl.setRoot('CategoriasPage');
   }
+
+  ionViewDidLeave(){
+    this.menu.swipeEnable(true);
+  }
+  ionViewWillEnter(){
+    this.menu.swipeEnable(false);
+  }
+
 
 }
