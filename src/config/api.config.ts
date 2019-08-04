@@ -1,3 +1,4 @@
 export const API_CONFIG={
-    base_url:"http://localhost:8080"
+    baseUrl:"http://localhost:8080",
+    baseBucket:"https://projetoestudospringboot.s3-sa-east-1.amazonaws.com"
 }
